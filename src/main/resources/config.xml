@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<demoqa>
+    <URLs>
+        <baseURL>https://demoqa.com/books</baseURL>
+    </URLs>
+    <credentionals>
+        <userName>UserName</userName>
+        <password>Pass-111*</password>
+    </credentionals>
+</demoqa>

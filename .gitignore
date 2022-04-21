@@ -1,0 +1,18 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+
+target
+allure-results
+build
+spoepart/test-output/
+
+### IntelliJ IDEA ###
+.idea
+.allure
+*.iws
+*.iml
+*.ipr
+
+*.log*
+*.tmp
