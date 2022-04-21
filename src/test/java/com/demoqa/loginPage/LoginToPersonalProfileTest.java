@@ -1,34 +1,17 @@
 package com.demoqa.loginPage;
 
 import com.demoqa.CommonConfigurationTest;
-import com.demoqa.UserSession;
 import com.demoqa.ui.pages.BookStorePage;
 import com.demoqa.ui.pages.LoginPage;
 import io.qameta.allure.Description;
 import lombok.extern.slf4j.Slf4j;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.lang.reflect.Method;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 @Slf4j
 public class LoginToPersonalProfileTest extends CommonConfigurationTest {
-
-    private UserSession user;
-
-    @BeforeMethod
-    public void setUp(Method method) {
-        user = new UserSession("User session: ");
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        user.quit();
-    }
 
     @Test(description = "Login to 'Personal Profile' via 'Login' button.")
     @Description("Check login to 'Personal Profile' via 'Login' button.")

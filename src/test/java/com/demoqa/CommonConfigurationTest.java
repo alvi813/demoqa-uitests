@@ -3,6 +3,8 @@ package com.demoqa;
 import com.demoqa.ui.pages.BookStorePage;
 import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -12,14 +14,16 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 @Slf4j
 public abstract class CommonConfigurationTest {
 
-    public Document document;
-    public static String baseUrl;
-    public static String userName;
-    public static String password;
+    protected Document document;
+    protected UserSession user;
+    protected static String baseUrl;
+    protected static String userName;
+    protected static String password;
 
 
     @BeforeSuite(alwaysRun = true)
@@ -51,5 +55,15 @@ public abstract class CommonConfigurationTest {
     public BookStorePage goToBookStorePage(UserSession user) {
         user.openBrowser(CommonConfigurationTest.baseUrl);
         return new BookStorePage(user);
+    }
+
+    @BeforeMethod
+    public void setUp(Method method) {
+        user = new UserSession("User session: ");
+    }
+
+    @AfterMethod
+    public void earDown() {
+        user.quit();
     }
 }

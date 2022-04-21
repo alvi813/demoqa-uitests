@@ -1,14 +1,10 @@
 package com.demoqa.bookStorePage;
 
 import com.demoqa.CommonConfigurationTest;
-import com.demoqa.UserSession;
 import com.demoqa.ui.pages.BookStorePage;
 import io.qameta.allure.Description;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -19,18 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CheckSearchFieldTest extends CommonConfigurationTest {
 
-    private UserSession user;
     private final String searchValue = "Java";
-
-    @BeforeMethod
-    public void setUp(Method method) {
-        user = new UserSession("User session: ");
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        user.quit();
-    }
 
     @Test(description = "Check rows per page drop-down on 'Book Store' page.")
     @Description("Check rows per page drop-down on 'Book Store' page.")
