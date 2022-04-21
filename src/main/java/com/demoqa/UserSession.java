@@ -3,7 +3,6 @@ package com.demoqa;
 import com.codeborne.selenide.SelenideConfig;
 
 import com.codeborne.selenide.SelenideDriver;
-import com.demoqa.ui.pages.BookStorePage;
 import io.qameta.allure.Step;
 
 import java.time.LocalDateTime;
@@ -48,12 +47,6 @@ public class UserSession {
     public void openBrowser(String url) {
         driver.open(url);
         driver.getWebDriver().manage().window().maximize();
-    }
-
-    @Step("Go to the 'Book Store' page.")
-    public BookStorePage goToBookStorePage() {
-        openBrowser(CommonConfigurationTest.baseUrl);
-        return new BookStorePage(this);
     }
 
     @Step("Call driver's quit() method.")

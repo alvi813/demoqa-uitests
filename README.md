@@ -8,5 +8,5 @@ For launch all tests:
 Run -> Edit configurations -> TestNG. JDK settings - VM options:
 ```
 -ea
--Dtest=com.demoqa.LoginToPersonalProfileTest
+-Dtest=com.demoqa.loginPage.LoginToPersonalProfileTest
 ```

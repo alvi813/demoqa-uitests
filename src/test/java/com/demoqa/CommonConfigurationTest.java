@@ -1,5 +1,7 @@
 package com.demoqa;
 
+import com.demoqa.ui.pages.BookStorePage;
+import io.qameta.allure.Step;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeSuite;
 import org.w3c.dom.Document;
@@ -43,5 +45,11 @@ public abstract class CommonConfigurationTest {
             log.info("Unable to parse xml file.");
         }
         return document;
+    }
+
+    @Step("Go to the 'Book Store' page.")
+    public BookStorePage goToBookStorePage(UserSession user) {
+        user.openBrowser(CommonConfigurationTest.baseUrl);
+        return new BookStorePage(user);
     }
 }

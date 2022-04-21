@@ -1,5 +1,7 @@
-package com.demoqa;
+package com.demoqa.bookStorePage;
 
+import com.demoqa.CommonConfigurationTest;
+import com.demoqa.UserSession;
 import com.demoqa.ui.pages.BookStorePage;
 import io.qameta.allure.Description;
 import org.testng.annotations.AfterMethod;
@@ -14,7 +16,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 
-public class CheckPreviousAndNextButtonsOnBookStorePageTest extends CommonConfigurationTest {
+public class CheckPreviousAndNextButtonsTest extends CommonConfigurationTest {
 
     private UserSession user;
 
@@ -30,8 +32,8 @@ public class CheckPreviousAndNextButtonsOnBookStorePageTest extends CommonConfig
 
     @Test(description = "Check 'Previous' and 'Next' buttons on 'Book Store' page.")
     @Description("Check rows per page drop-down on 'Book Store' page.")
-    public void checkPreviousAndNextButtonsOnBookStorePage() {
-        BookStorePage bookStorePage = user.goToBookStorePage().waitPageLoading();
+    public void checkPreviousAndNextButtons() {
+        BookStorePage bookStorePage = goToBookStorePage(user).waitPageLoading();
 
         assertTrue(bookStorePage.isNextButtonDisplayed(), "'Next' button is not displayed.");
         assertTrue(bookStorePage.isNextButtonEnabled(), "'Next' button is not enabled.");

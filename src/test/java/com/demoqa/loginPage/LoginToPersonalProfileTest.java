@@ -1,5 +1,7 @@
-package com.demoqa;
+package com.demoqa.loginPage;
 
+import com.demoqa.CommonConfigurationTest;
+import com.demoqa.UserSession;
 import com.demoqa.ui.pages.BookStorePage;
 import com.demoqa.ui.pages.LoginPage;
 import io.qameta.allure.Description;
@@ -31,7 +33,7 @@ public class LoginToPersonalProfileTest extends CommonConfigurationTest {
     @Test(description = "Login to 'Personal Profile' via 'Login' button.")
     @Description("Check login to 'Personal Profile' via 'Login' button.")
     public void loginToPersonalProfileViaLoginButton() {
-        BookStorePage bookStorePage = user.goToBookStorePage().waitPageLoading();
+        BookStorePage bookStorePage = goToBookStorePage(user).waitPageLoading();
         assertTrue(bookStorePage.isLoginButtonEnabled(),
                 "'Login' button is not enabled on 'Book Store' page.");
         LoginPage loginPage = bookStorePage.clickLoginButton().waitPageLoading();
@@ -44,7 +46,7 @@ public class LoginToPersonalProfileTest extends CommonConfigurationTest {
     @Test(description = "Login to 'Personal Profile' via left menu.")
     @Description("Check login to 'Personal Profile' via left menu.")
     public void loginToPersonalProfileViaLeftMenu() {
-        BookStorePage bookStorePage = user.goToBookStorePage().waitPageLoading();
+        BookStorePage bookStorePage = goToBookStorePage(user).waitPageLoading();
         assertTrue(bookStorePage.isLeftBarTabEnabled(),
                 "'Login' tab is not enabled on 'Book Store' page.");
         LoginPage loginPage = bookStorePage.selectLeftBarTab().waitPageLoading();

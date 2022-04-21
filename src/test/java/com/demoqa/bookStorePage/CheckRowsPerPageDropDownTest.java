@@ -1,9 +1,9 @@
-package com.demoqa;
+package com.demoqa.bookStorePage;
 
+import com.demoqa.CommonConfigurationTest;
+import com.demoqa.UserSession;
 import com.demoqa.ui.pages.BookStorePage;
 import io.qameta.allure.Description;
-import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class CheckRowsPerPageDropDownOnBookStorePageTest extends CommonConfigurationTest {
+public class CheckRowsPerPageDropDownTest extends CommonConfigurationTest {
 
     private UserSession user;
 
@@ -30,8 +30,8 @@ public class CheckRowsPerPageDropDownOnBookStorePageTest extends CommonConfigura
 
     @Test(description = "Check rows per page drop-down on 'Book Store' page.")
     @Description("Check rows per page drop-down on 'Book Store' page.")
-    public void checkRowsPerPageDropDownOnBookStorePage() {
-        BookStorePage bookStorePage = user.goToBookStorePage().waitPageLoading();
+    public void checkRowsPerPageDropDown() {
+        BookStorePage bookStorePage = goToBookStorePage(user).waitPageLoading();
 
         assertTrue(bookStorePage.isRowsPerPageDropDownIsDisplayed(),
                 "Rows per page' drop-down is not displayed.");
