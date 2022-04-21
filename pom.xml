@@ -59,6 +59,11 @@
             <artifactId>guice</artifactId>
             <version>${guice.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -99,7 +104,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
